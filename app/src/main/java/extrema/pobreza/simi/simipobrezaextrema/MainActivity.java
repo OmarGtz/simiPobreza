@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         if(toolbar!=null){
             setSupportActionBar(toolbar);
             ActionBar ab = getSupportActionBar();
-
         }
     }
 
@@ -46,13 +45,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.nav_menu_comunidad:
                 changeFragment(new CommunityFragment());
-                getSupportActionBar().setTitle("Comunidades");
-
+                getSupportActionBar().setTitle("Donaciones");
                 break;
 
             case R.id.nav_afiliado:
                 changeFragment(new AffiliateFragment());
-                getSupportActionBar().setTitle("Afiliados");
+                getSupportActionBar().setTitle("Beneficiarios");
                 break;
 
             case R.id.nav_sync_up:

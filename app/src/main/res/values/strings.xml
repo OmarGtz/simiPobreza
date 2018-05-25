@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SimiVsPobreza</string>
-    <string name="nav_afiliados">Afiliados</string>
-    <string name="nav_comunidades">Comunidades</string>
+    <string name="nav_afiliados">Beneficiarios</string>
+    <string name="nav_comunidades">Donaciones</string>
     <string name="nav_menu_sinc_up">Sincronización</string>
 
     <!-- TODO: Remove or change this placeholder text -->

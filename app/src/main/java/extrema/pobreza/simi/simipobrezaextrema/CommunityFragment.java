@@ -77,10 +77,10 @@ public class CommunityFragment extends Fragment {
 
 
     public void setListCommunities(){
-        Community community1 = new Community("san anntonio","estado de mexico","ciudad de mexico");
-        Community community2 = new Community("san pedro","estado de mexico","ciudad de mexico");
-        Community community3 = new Community("san mariana","estado de mexico","ciudad de mexico");
-        Community community4 = new Community("san pancho","estado de mexico","ciudad de mexico");
+        Community community1 = new Community("SAN ANTONIO RECOMITL","estado de mexico","ciudad de mexico");
+        Community community2 = new Community("OXTOTIPAC","estado de mexico","ciudad de mexico");
+        Community community3 = new Community("ATIZAPAN","estado de mexico","ciudad de mexico");
+        Community community4 = new Community("MILPA ALTA","estado de mexico","ciudad de mexico");
         communities = new ArrayList<>();
 
         communities.add(community1);

@@ -4,7 +4,7 @@
 
     <item android:title="@string/nav_comunidades"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/navigation_icon_comunity"
+        android:icon="@drawable/navigation_icon_donation"
         android:id="@+id/nav_menu_comunidad"/>
 
     <item android:title="@string/nav_afiliados"
