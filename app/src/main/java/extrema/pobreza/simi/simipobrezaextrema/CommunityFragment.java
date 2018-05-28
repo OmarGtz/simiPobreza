@@ -1,16 +1,21 @@
 package extrema.pobreza.simi.simipobrezaextrema;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.chip.Chip;
+import android.support.design.chip.ChipGroup;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,12 +27,15 @@ import extrema.pobreza.simi.simipobrezaextrema.model.Community;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CommunityFragment extends Fragment {
+public class CommunityFragment extends Fragment implements ChipGroup.OnCheckedChangeListener {
 
 
     private RecyclerView communityRecicler;
     private CommunityAdapter communityAdapter;
     private RecyclerView.LayoutManager layoutManager;
+
+    private ChipGroup chipGroup;
+    private Chip chip;
 
     List<Community> communities;
 
@@ -61,9 +69,21 @@ public class CommunityFragment extends Fragment {
         this.context = context;
     }
 
+    @SuppressLint("ResourceType")
+    @Override
+    public void onStart() {
+        super.onStart();
+        chipGroup.setOnCheckedChangeListener(this);
+
+        chip.setCheckable(true);
+        chip.setCheckedIconEnabled(false);
+        chip.setChecked(true);
+    }
 
     public void initViews(View v){
         communityRecicler = v.findViewById(R.id.comunity_recycler);
+        chipGroup = v.findViewById(R.id.comunity_chip_group);
+        chip = v.findViewById(R.id.chip_feb);
     }
 
     public void setAdapter(){
@@ -74,6 +94,8 @@ public class CommunityFragment extends Fragment {
             }
         });
     }
+
+
 
 
     public void setListCommunities(){
@@ -109,5 +131,17 @@ public class CommunityFragment extends Fragment {
     }
 
 
+    @SuppressLint("ResourceType")
+    @Override
+    public void onCheckedChanged(ChipGroup group, int checkedId) {
 
+
+        Toast.makeText(getContext(),"ENE-MARZO"+checkedId,Toast.LENGTH_SHORT).show();
+        switch (checkedId){
+            case R.id.chip_feb:
+                Toast.makeText(getContext(),"ENE-MARZO",Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+    }
 }

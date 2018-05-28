@@ -6,6 +6,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".CommunityFragment">
 
+    <TextView
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/comunity_content_chip"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/comunity_tv_delegation"
+        android:text="BAJA CALIFORNIA NORTE"/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@android:color/holo_red_dark"
+
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comunity_status"
+        android:text="CERRADA"/>
+
 
     <HorizontalScrollView
         android:id="@+id/comunity_content_chip"
@@ -14,26 +42,29 @@
         android:scrollbars="none"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/comunity_tv_delegation"
+        app:layout_constraintBottom_toTopOf="@+id/comunity_line">
+
+
 
         <android.support.design.chip.ChipGroup
             android:id="@+id/comunity_chip_group"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedChip="@color/colorPrimary"
+            app:singleSelection="true">
+
 
             <android.support.design.chip.Chip
+                android:id="@+id/chip_feb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipText="ENE-FEB"/>
-
-            <android.support.design.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipText="MAR-ABR"/>
+                app:chipText="ENE-FEB"
+                />
 
 
             <android.support.design.chip.Chip
@@ -46,20 +77,31 @@
                 android:layout_height="wrap_content"
                 app:chipText="JUL-AGO"/>
 
-
             <android.support.design.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:chipText="SEP-OCT"/>
+                app:chipText="SEP-OCT"
+                />
 
             <android.support.design.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:chipText="NOV-ENE"/>
 
+
         </android.support.design.chip.ChipGroup>
 
+
     </HorizontalScrollView>
+
+    <View
+        android:id="@+id/comunity_line"
+        app:layout_constraintTop_toBottomOf="@+id/comunity_content_chip"
+        app:layout_constraintBottom_toTopOf="@+id/comunity_recycler"
+
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
 
     <android.support.v7.widget.RecyclerView
@@ -67,11 +109,9 @@
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comunity_content_chip"
+        app:layout_constraintTop_toBottomOf="@+id/comunity_line"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="0dp" />
-
-
 
 </android.support.constraint.ConstraintLayout>
