@@ -8,32 +8,30 @@
 
     <TextView
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="13sp"
         android:layout_marginTop="12dp"
         android:layout_marginStart="12dp"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/comunity_content_chip"
         app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/comunity_tv_delegation"
-        android:text="BAJA CALIFORNIA NORTE"/>
+        android:text="Delegación: Baja California\n                        Norte"/>
 
     <TextView
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         app:layout_constraintTop_toTopOf="parent"
         android:textStyle="bold"
-        android:textSize="15sp"
+        android:textSize="13sp"
         android:textColor="@android:color/holo_red_dark"
-
         app:layout_constraintRight_toRightOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/comunity_status"
-        android:text="CERRADA"/>
-
+        android:text="Estatus: Cerrada"/>
 
     <HorizontalScrollView
         android:id="@+id/comunity_content_chip"
@@ -49,48 +47,98 @@
         app:layout_constraintTop_toBottomOf="@+id/comunity_tv_delegation"
         app:layout_constraintBottom_toTopOf="@+id/comunity_line">
 
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
-
-        <android.support.design.chip.ChipGroup
-            android:id="@+id/comunity_chip_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:checkedChip="@color/colorPrimary"
-            app:singleSelection="true">
-
-
-            <android.support.design.chip.Chip
-                android:id="@+id/chip_feb"
+            <RadioButton
+                android:background="@drawable/chip_periods_background_color"
+                android:text="ENE-FEB"
+                android:textColor="@drawable/chip_color_tex"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:button="@null"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipText="ENE-FEB"
-                />
+                android:layout_height="wrap_content" />
 
+            <RadioButton
+                android:background="@drawable/chip_periods_background_color"
+                android:text="MAR-ABR"
+                android:textColor="@drawable/chip_color_tex"
+                android:paddingTop="8dp"
 
-            <android.support.design.chip.Chip
+                android:textStyle="bold"
+                android:paddingBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:button="@null"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipText="MAY-JUN"/>
+                android:layout_height="wrap_content" />
 
-            <android.support.design.chip.Chip
+            <RadioButton
+                android:background="@drawable/chip_periods_background_color"
+                android:text="MAY-JUN"
+                android:textColor="@drawable/chip_color_tex"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:button="@null"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipText="JUL-AGO"/>
+                android:layout_height="wrap_content" />
 
-            <android.support.design.chip.Chip
+            <RadioButton
+                android:background="@drawable/chip_periods_background_color"
+                android:text="JUL-AGO"
+                android:textColor="@drawable/chip_color_tex"
+                android:textStyle="bold"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:button="@null"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipText="SEP-OCT"
-                />
+                android:layout_height="wrap_content" />
 
-            <android.support.design.chip.Chip
+            <RadioButton
+                android:background="@drawable/chip_periods_background_color"
+                android:text="SEP-OCT"
+                android:textColor="@drawable/chip_color_tex"
+                android:paddingTop="8dp"
+                android:textStyle="bold"
+                android:paddingBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:button="@null"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:chipText="NOV-ENE"/>
+                android:layout_height="wrap_content" />
 
+            <RadioButton
+                android:background="@drawable/chip_periods_background_color"
+                android:text="NOV-DIC"
 
-        </android.support.design.chip.ChipGroup>
-
+                android:textColor="@drawable/chip_color_tex"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+                android:button="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
 
     </HorizontalScrollView>
 
@@ -103,6 +151,16 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="12dp"
+        app:backgroundTint="@color/colorPrimaryDark"
+        android:src="@drawable/navigation_icon_donation"
+        android:layout_marginBottom="12dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/comunity_recycler"

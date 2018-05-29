@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.chip.Chip;
-import android.support.design.chip.ChipGroup;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,15 +25,13 @@ import extrema.pobreza.simi.simipobrezaextrema.model.Community;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CommunityFragment extends Fragment implements ChipGroup.OnCheckedChangeListener {
+public class CommunityFragment extends Fragment {
 
 
     private RecyclerView communityRecicler;
     private CommunityAdapter communityAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    private ChipGroup chipGroup;
-    private Chip chip;
 
     List<Community> communities;
 
@@ -73,17 +69,26 @@ public class CommunityFragment extends Fragment implements ChipGroup.OnCheckedCh
     @Override
     public void onStart() {
         super.onStart();
-        chipGroup.setOnCheckedChangeListener(this);
+      //  chipGroup.setOnCheckedChangeListener(this);
+      //  chip.setCheckable(true);
+      //  chip1.setCheckable(true);
+      //  chip2.setCheckable(true);
+      //  chip3.setCheckable(true);
+      //  chip4.setCheckable(true);
 
-        chip.setCheckable(true);
-        chip.setCheckedIconEnabled(false);
-        chip.setChecked(true);
+      //  chip1.setChecked(true);
+      //  chip2.setChecked(true);
+      //  chip1.setCheckedIconEnabled(false);
     }
 
     public void initViews(View v){
         communityRecicler = v.findViewById(R.id.comunity_recycler);
-        chipGroup = v.findViewById(R.id.comunity_chip_group);
-        chip = v.findViewById(R.id.chip_feb);
+      //  chipGroup = v.findViewById(R.id.comunity_chip_group);
+      //  chip = v.findViewById(R.id.chip_feb);
+      //  chip1 = v.findViewById(R.id.chip_may);
+      //  chip2 = v.findViewById(R.id.JUL_AGO);
+      //  chip3 = v.findViewById(R.id.sep);
+      //  chip4 = v.findViewById(R.id.nov);
     }
 
     public void setAdapter(){
@@ -130,18 +135,4 @@ public class CommunityFragment extends Fragment implements ChipGroup.OnCheckedCh
         communityRecicler.setLayoutManager(layoutManager);
     }
 
-
-    @SuppressLint("ResourceType")
-    @Override
-    public void onCheckedChanged(ChipGroup group, int checkedId) {
-
-
-        Toast.makeText(getContext(),"ENE-MARZO"+checkedId,Toast.LENGTH_SHORT).show();
-        switch (checkedId){
-            case R.id.chip_feb:
-                Toast.makeText(getContext(),"ENE-MARZO",Toast.LENGTH_SHORT).show();
-                break;
-        }
-
-    }
 }
