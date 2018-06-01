@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:title="@string/nav_comunidades"
-        app:showAsAction="ifRoom"
+        android:enabled="true"
         android:icon="@drawable/navigation_icon_donation"
         android:id="@+id/nav_menu_comunidad"/>
 
     <item android:title="@string/nav_afiliados"
+        android:enabled="true"
         android:icon="@drawable/navigation_icon_afiliado"
-        app:showAsAction="ifRoom"
         android:id="@+id/nav_afiliado"/>
 
     <item android:title="@string/nav_menu_sinc_up"
         android:icon="@drawable/navigation_icon_sync_up"
-        app:showAsAction="ifRoom"
+        android:enabled="true"
         android:id="@+id/nav_sync_up"/>
 
 </menu>

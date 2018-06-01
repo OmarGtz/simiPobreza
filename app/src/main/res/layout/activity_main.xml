@@ -11,10 +11,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="8dp"
+
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:background="@color/colorPrimary"
+        app:subtitleTextColor="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"/>
+        android:layout_height="wrap_content"/>
     
     <FrameLayout
         app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
@@ -24,16 +28,18 @@
         android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
-    
+
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/main_navigation_bottom"
         android:layout_width="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_height="56dp"
+        android:elevation="8dp"
         android:layout_gravity="start"
         app:itemBackground="@color/colorPrimary"
-        app:itemTextColor="@android:color/white"
-        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@color/item_bottomview_color"
+        app:itemIconTint="@color/item_bottomview_color"
         app:menu="@menu/navigation_bottom_items">
 
     </android.support.design.widget.BottomNavigationView>

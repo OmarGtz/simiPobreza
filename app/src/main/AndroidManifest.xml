@@ -3,6 +3,8 @@
     package="extrema.pobreza.simi.simipobrezaextrema">
 
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <application
         android:allowBackup="true"
@@ -19,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".CampaingActivity"></activity>
+        <activity android:name=".CampaingActivity" />
+        <activity android:name=".ScannerActivity"></activity>
     </application>
 
 </manifest>

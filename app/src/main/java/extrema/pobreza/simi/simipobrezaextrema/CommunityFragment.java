@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,13 +26,13 @@ import extrema.pobreza.simi.simipobrezaextrema.model.Community;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CommunityFragment extends Fragment {
+public class CommunityFragment extends Fragment implements View.OnClickListener {
 
 
     private RecyclerView communityRecicler;
     private CommunityAdapter communityAdapter;
     private RecyclerView.LayoutManager layoutManager;
-
+    private FloatingActionButton fbScanner;
 
     List<Community> communities;
 
@@ -69,6 +70,7 @@ public class CommunityFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        fbScanner.setOnClickListener(this);
       //  chipGroup.setOnCheckedChangeListener(this);
       //  chip.setCheckable(true);
       //  chip1.setCheckable(true);
@@ -83,6 +85,7 @@ public class CommunityFragment extends Fragment {
 
     public void initViews(View v){
         communityRecicler = v.findViewById(R.id.comunity_recycler);
+        fbScanner = v.findViewById(R.id.comunity_fb_scanner);
       //  chipGroup = v.findViewById(R.id.comunity_chip_group);
       //  chip = v.findViewById(R.id.chip_feb);
       //  chip1 = v.findViewById(R.id.chip_may);
@@ -95,7 +98,7 @@ public class CommunityFragment extends Fragment {
         communityAdapter = new CommunityAdapter(communities, context, new CommunityAdapter.OnCommunityListener() {
             @Override
             public void onClickItem(int position) {
-                startActivity(new Intent(context,CampaingActivity.class));
+                //startActivity(new Intent(context,CampaingActivity.class));
             }
         });
     }
@@ -135,4 +138,13 @@ public class CommunityFragment extends Fragment {
         communityRecicler.setLayoutManager(layoutManager);
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.comunity_fb_scanner:
+                startActivity(new Intent(getActivity(),ScannerActivity.class));
+                break;
+
+        }
+    }
 }
