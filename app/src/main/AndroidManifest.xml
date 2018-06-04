@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +21,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".CampaingActivity" />
-        <activity android:name=".ScannerActivity"></activity>
+        <activity android:name=".ScannerActivity" />
+        <activity android:name=".BeneficarioActivity"></activity>
     </application>
 
 </manifest>

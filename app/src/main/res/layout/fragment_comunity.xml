@@ -96,6 +96,7 @@
             android:layout_height="wrap_content">
 
             <RadioButton
+                android:id="@+id/rbbtn_feb"
                 android:background="@drawable/chip_periods_background_color"
                 android:text="ENE-FEB"
                 android:textSize="12sp"
@@ -185,7 +186,7 @@
         android:id="@+id/comunity_fb_scanner"
         android:layout_width="wrap_content"
         android:layout_marginEnd="12dp"
-        app:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTint="@color/colorPrimary"
         android:src="@drawable/navigation_icon_donation"
         android:layout_marginBottom="12dp"
         app:fabSize="normal"

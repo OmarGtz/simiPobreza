@@ -14,6 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,9 +24,6 @@ import extrema.pobreza.simi.simipobrezaextrema.adapter.CommunityAdapter;
 import extrema.pobreza.simi.simipobrezaextrema.model.Community;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class CommunityFragment extends Fragment implements View.OnClickListener {
 
 
@@ -33,6 +31,8 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
     private CommunityAdapter communityAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fbScanner;
+
+    private RadioButton radioButton;
 
     List<Community> communities;
 
@@ -86,6 +86,9 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
     public void initViews(View v){
         communityRecicler = v.findViewById(R.id.comunity_recycler);
         fbScanner = v.findViewById(R.id.comunity_fb_scanner);
+        radioButton = v.findViewById(R.id.rbbtn_feb);
+
+        radioButton.setChecked(true);
       //  chipGroup = v.findViewById(R.id.comunity_chip_group);
       //  chip = v.findViewById(R.id.chip_feb);
       //  chip1 = v.findViewById(R.id.chip_may);
@@ -107,22 +110,19 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
 
 
     public void setListCommunities(){
-        Community community1 = new Community("TEOFILO GARCIA GARCIA","estado de mexico","ciudad de mexico");
+        Community community1 = new Community("LAURA NO ESTA","estado de mexico","ciudad de mexico");
         Community community2 = new Community("FILOMENO MENDEZ MENDOZA","estado de mexico","ciudad de mexico");
         Community community3 = new Community("ANZINA ALIBABA BABA","estado de mexico","ciudad de mexico");
-        Community community4 = new Community("ANA D GARP","estado de mexico","ciudad de mexico");
+        Community community4 = new Community("ANITA LA HUERFANITA","estado de mexico","ciudad de mexico");
         communities = new ArrayList<>();
-
         communities.add(community1);
         communities.add(community2);
         communities.add(community3);
         communities.add(community4);
-
         communities.add(community1);
         communities.add(community2);
         communities.add(community3);
         communities.add(community4);
-
         communities.add(community1);
         communities.add(community2);
         communities.add(community3);
