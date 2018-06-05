@@ -1,14 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BeneficiarioDireccion">
 
-    <TextView
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Direccion" />
+    <android.support.design.widget.TextInputLayout
+        android:gravity="bottom"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/profile_input_layout_calle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#9e000000"
+        app:hintTextAppearance="@style/login_hintTextAppearance"
+        android:layout_marginStart="24dp"
+        app:hintEnabled="true"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/profile_input_layout_colonia"
+        app:hintAnimationEnabled="true"
+        app:layout_constraintStart_toStartOf="parent">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:enabled="false"
+            android:focusable="false"
+            android:fontFamily="sans-serif"
+            android:text="12 de Diciembre"
+            android:textColor="@color/colorPrimaryDark"
+            android:theme="@style/login_editControl"
+            android:hint="Calle" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:gravity="bottom"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_input_layout_calle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/profile_input_layout_colonia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#9e000000"
+        app:hintTextAppearance="@style/login_hintTextAppearance"
+        app:hintEnabled="true"
+        android:focusable="false"
+        app:hintAnimationEnabled="true" >
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:enabled="false"
+            android:focusable="false"
+            android:fontFamily="sans-serif"
+            android:text="Centenario"
+            android:theme="@style/login_editControl"
+            android:hint="Colonia" />
 
-</FrameLayout>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:gravity="bottom"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_input_layout_calle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/profile_input_dia_nacimiento"
+        android:id="@+id/profile_input_edad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#9e000000"
+        app:hintTextAppearance="@style/login_hintTextAppearance"
+        app:hintEnabled="true"
+        android:focusable="false"
+        app:hintAnimationEnabled="true" >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:enabled="false"
+            android:focusable="false"
+            android:fontFamily="sans-serif"
+            android:text="819"
+            android:theme="@style/login_editControl"
+            android:hint="Numero Exterior" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:gravity="bottom"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_input_layout_calle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_input_edad"
+        android:id="@+id/profile_input_dia_nacimiento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#9e000000"
+        app:hintTextAppearance="@style/login_hintTextAppearance"
+        app:hintEnabled="true"
+        android:focusable="false"
+        app:hintAnimationEnabled="true" >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:enabled="false"
+            android:focusable="false"
+            android:fontFamily="sans-serif"
+            android:text="Sn"
+            android:theme="@style/login_editControl"
+            android:hint="Numero interior" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+
+        android:gravity="bottom"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_input_edad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/profile_input_etnia"
+        android:id="@+id/profile_input_telefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#9e000000"
+        app:hintTextAppearance="@style/login_hintTextAppearance"
+        app:hintEnabled="true"
+        android:focusable="false"
+        app:hintAnimationEnabled="true" >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:enabled="false"
+            android:focusable="false"
+            android:fontFamily="sans-serif"
+            android:text="Coahuila"
+            android:theme="@style/login_editControl"
+            android:hint="Estado" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+
+        android:gravity="bottom"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_input_dia_nacimiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profile_input_telefono"
+        android:id="@+id/profile_input_etnia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#9e000000"
+        app:hintTextAppearance="@style/login_hintTextAppearance"
+        app:hintEnabled="true"
+        android:focusable="false"
+        app:hintAnimationEnabled="true" >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:enabled="false"
+            android:focusable="false"
+            android:fontFamily="sans-serif"
+            android:text="Saltillo"
+            android:theme="@style/login_editControl"
+            android:hint="Delegacion o municipio" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:gravity="bottom"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/profile_input_telefono"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/profile_input_sexo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="#9e000000"
+        app:hintTextAppearance="@style/login_hintTextAppearance"
+        app:hintEnabled="true"
+        android:focusable="false"
+        app:hintAnimationEnabled="true" >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="match_parent"
+            android:textSize="15sp"
+            android:enabled="false"
+            android:focusable="false"
+            android:fontFamily="sans-serif"
+            android:text="25050"
+            android:theme="@style/login_editControl"
+            android:hint="Codigo postal" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

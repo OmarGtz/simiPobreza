@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import extrema.pobreza.simi.simipobrezaextrema.adapter.BeneficiarioPageAdapter;
@@ -41,10 +42,9 @@ public class BeneficarioActivity extends AppCompatActivity implements TabLayout.
 
         //set tabs
 
-        tabLayout.addTab(tabLayout.newTab().setText("Datos personales"));
+        tabLayout.addTab(tabLayout.newTab().setText("Datos generales"));
         tabLayout.addTab(tabLayout.newTab().setText("Direccion"));
         tabLayout.addTab(tabLayout.newTab().setText("Datos socioeconomicos"));
-        tabLayout.addTab(tabLayout.newTab().setText("Salud"));
         tabLayout.addTab(tabLayout.newTab().setText("Cotitular"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
@@ -63,11 +63,20 @@ public class BeneficarioActivity extends AppCompatActivity implements TabLayout.
         toolbar = findViewById(R.id.beneficiario_toolbar);
         setSupportActionBar(toolbar);
         if(getSupportActionBar()!=null){
-            getSupportActionBar().setTitle("Detalle del beneficiario");
+            getSupportActionBar().setTitle("Beneficiario");
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.beneficiario_menu,menu);
+
+        return super.onCreateOptionsMenu(menu);
+
+
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

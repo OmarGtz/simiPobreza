@@ -18,8 +18,8 @@ public class BeneficiarioPageAdapter extends FragmentPagerAdapter{
     public static final int FRAGMENT_DIRECCION = 1;
 
     public static final int FRAGMENT_DATOS_SOCIOECONOMICOS = 2;
-    public static final int FRAGMENT_SALUD = 3;
-    public static final int FRAGMENT_COTITULAR = 4;
+    //public static final int FRAGMENT_SALUD = 3;
+    public static final int FRAGMENT_COTITULAR = 3;
 
 
 
@@ -40,9 +40,6 @@ public class BeneficiarioPageAdapter extends FragmentPagerAdapter{
 
             case FRAGMENT_DATOS_SOCIOECONOMICOS:
                 return new BeneficiarioSocioEconomico();
-
-            case FRAGMENT_SALUD:
-                return new BeneficiarioSalud();
 
             case FRAGMENT_COTITULAR:
                 return new BeneficiarioCotitular();
