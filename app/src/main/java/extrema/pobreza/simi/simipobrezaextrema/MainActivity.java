@@ -13,11 +13,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +24,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         toolbar = findViewById(R.id.main_toolbar);
         setToolbar();
         bottomNavigationView.setSelectedItemId(R.id.nav_menu_comunidad);
-
-
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.nav_menu_comunidad);
     }
@@ -36,28 +31,20 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.actionbar_menu,menu);
-
-
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
-
         MenuItem.OnActionExpandListener onActionExpandListener = new MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
-
-
                 return true;
             }
-
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
+
                 return true;
             }
         };
-
-
         return super.onCreateOptionsMenu(menu);
-
     }
 
     @Override
@@ -79,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.nav_menu_comunidad:
                 changeFragment(new CommunityFragment());
                 getSupportActionBar().setTitle("Donaciones");
-                getSupportActionBar().setSubtitle("Baja California Sur");
                 break;
 
             case R.id.nav_afiliado:

@@ -17,15 +17,12 @@ public class BeneficarioActivity extends AppCompatActivity implements TabLayout.
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private BeneficiarioPageAdapter pageAdapter;
-
     private Toolbar toolbar;
     public static final int FRAGMENT_DATOS_PERSONALES = 0;
     public static final int FRAGMENT_DIRECCION = 1;
-
     public static final int FRAGMENT_DATOS_SOCIOECONOMICOS = 2;
     public static final int FRAGMENT_SALUD = 3;
     public static final int FRAGMENT_COTITULAR = 4;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,23 +30,18 @@ public class BeneficarioActivity extends AppCompatActivity implements TabLayout.
         setContentView(R.layout.activity_beneficario);
         initViews();
         setToolbar();
-
     }
 
     public void initViews(){
         viewPager= findViewById(R.id.beneficiario_view_pager);
         tabLayout = findViewById(R.id.beneficiario_tablayout);
-
         //set tabs
-
         tabLayout.addTab(tabLayout.newTab().setText("Datos generales"));
         tabLayout.addTab(tabLayout.newTab().setText("Direccion"));
         tabLayout.addTab(tabLayout.newTab().setText("Datos socioeconomicos"));
         tabLayout.addTab(tabLayout.newTab().setText("Cotitular"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
-
-
         pageAdapter = new BeneficiarioPageAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
