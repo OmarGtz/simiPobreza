@@ -54,18 +54,19 @@ public class AffiliateFragment extends Fragment {
     }
 
     public void setLayoutManager(){
-
         layoutManager  = new LinearLayoutManager(getContext());
-
     }
 
     public void setBeneficiarios(){
         beneficiarios = new ArrayList<>();
         beneficiarios.add("omar Gutierrez santiago");
-        beneficiarios.add("omar Gutierrez santiago");
-        beneficiarios.add("omar Gutierrez santiago");
-        beneficiarios.add("omar Gutierrez santiago");
-        beneficiarios.add("omar Gutierrez santiago");
+        beneficiarios.add("Angel Sanchez Sanchez");
+        beneficiarios.add("John cena en la cocina");
+        beneficiarios.add("Anzina sina sina");
+        beneficiarios.add("Filemon de sagrado corazon");
+        beneficiarios.add("Elvis teck garcia");
+        beneficiarios.add("monica galindo gracia");
+        beneficiarios.add("Benito juarez juarez");
     }
 
     public void setAdapter(){

@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -24,19 +26,17 @@ import extrema.pobreza.simi.simipobrezaextrema.adapter.CommunityAdapter;
 import extrema.pobreza.simi.simipobrezaextrema.model.Community;
 
 
-public class CommunityFragment extends Fragment implements View.OnClickListener {
-
+public class CommunityFragment extends Fragment implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
     private RecyclerView communityRecicler;
     private CommunityAdapter communityAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private FloatingActionButton fbScanner;
-
     private RadioButton radioButton;
-
     List<Community> communities;
-
     private Context context;
+    private RadioGroup periodoGroup;
+    private TextView tvEstatus;
 
     public CommunityFragment() {
         // Required empty public constructor
@@ -71,6 +71,7 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
     public void onStart() {
         super.onStart();
         fbScanner.setOnClickListener(this);
+        periodoGroup.setOnCheckedChangeListener(this);
       //  chipGroup.setOnCheckedChangeListener(this);
       //  chip.setCheckable(true);
       //  chip1.setCheckable(true);
@@ -86,9 +87,12 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
     public void initViews(View v){
         communityRecicler = v.findViewById(R.id.comunity_recycler);
         fbScanner = v.findViewById(R.id.comunity_fb_scanner);
-        radioButton = v.findViewById(R.id.rbbtn_feb);
+        tvEstatus = v.findViewById(R.id.comunity_estatus);
+        radioButton = v.findViewById(R.id.rbtn1);
+        periodoGroup = v.findViewById(R.id.donaciones_group);
 
         radioButton.setChecked(true);
+
       //  chipGroup = v.findViewById(R.id.comunity_chip_group);
       //  chip = v.findViewById(R.id.chip_feb);
       //  chip1 = v.findViewById(R.id.chip_may);
@@ -105,9 +109,6 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
             }
         });
     }
-
-
-
 
     public void setListCommunities(){
         Community community1 = new Community("LAURA NO ESTA","estado de mexico","ciudad de mexico");
@@ -143,6 +144,46 @@ public class CommunityFragment extends Fragment implements View.OnClickListener 
         switch (v.getId()){
             case R.id.comunity_fb_scanner:
                 startActivity(new Intent(getActivity(),ScannerActivity.class));
+                break;
+
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (checkedId){
+            case R.id.rbtn1:
+
+                tvEstatus.setText("ABIERTO");
+                //Toast.makeText(context,"Ene",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.rbtn2:
+
+                tvEstatus.setText("CERRADO");
+                //Toast.makeText(context,"MAR",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.rbtn3:
+                tvEstatus.setText("CERRADO");
+                //Toast.makeText(context,"MAY",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.rbtn4:
+
+                tvEstatus.setText("CERRADO");
+                //Toast.makeText(context,"JUL",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.rbtn5:
+
+                tvEstatus.setText("CERRADO");
+                //Toast.makeText(context,"SEP",Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.rbtn6:
+                tvEstatus.setText("CERRADO");
+                //Toast.makeText(context,"NOV",Toast.LENGTH_SHORT).show();
                 break;
 
         }

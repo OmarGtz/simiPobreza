@@ -8,26 +8,42 @@
     android:paddingBottom="12dp"
     android:paddingEnd="24dp">
 
+    <ImageView
+        android:id="@+id/comunity_ic_donation"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_donation_48dp"/>
+
         <TextView
+            android:layout_marginTop="8dp"
             android:id="@+id/comunity_item_tv_name"
             android:layout_width="wrap_content"
             android:text="SAN ANTONIO ABAD"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/comunity_ic_donation"
             android:textColor="@android:color/black"
             android:textSize="12sp"
             android:layout_height="wrap_content" />
-        <TextView
-            app:layout_constraintStart_toStartOf="parent"
 
+        <TextView
             app:layout_constraintTop_toBottomOf="@+id/comunity_item_tv_name"
             app:layout_constraintEnd_toStartOf="@id/community_tv_entregadas"
             android:id="@+id/community_tv_donaciones"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:layout_marginStart="8dp"
             android:gravity="center"
             android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/comunity_ic_donation"
             android:layout_marginTop="4dp"
             android:textColor="@android:color/black"
             android:text="6300001391331"/>
+
         <TextView
             android:layout_marginStart="24dp"
             android:textColor="@android:color/black"
