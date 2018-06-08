@@ -5,20 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/main_toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:elevation="8dp"
+
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:background="@color/colorPrimary"
         app:subtitleTextColor="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
     <FrameLayout
         app:layout_constraintTop_toBottomOf="@+id/main_toolbar"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +25,6 @@
         android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/main_navigation_bottom"
         android:layout_width="match_parent"
@@ -35,12 +32,9 @@
         android:layout_height="56dp"
         android:background="@color/colorPrimary"
         app:elevation="8dp"
-
         android:layout_gravity="start"
         app:itemTextColor="@color/item_bottomview_color"
         app:itemIconTint="@color/item_bottomview_color"
         app:menu="@menu/navigation_bottom_items">
-
     </android.support.design.widget.BottomNavigationView>
-    
 </android.support.constraint.ConstraintLayout>

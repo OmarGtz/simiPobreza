@@ -65,20 +65,20 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.nav_menu_comunidad:
                 changeFragment(new CommunityFragment());
-                getSupportActionBar().setTitle("Donaciones");
+                //getSupportActionBar().setTitle("Donaciones");
                 break;
 
             case R.id.nav_afiliado:
                 changeFragment(new AffiliateFragment());
-                getSupportActionBar().setTitle("Beneficiarios");
-                getSupportActionBar().setSubtitle("");
+                //getSupportActionBar().setTitle("Beneficiarios");
+                //getSupportActionBar().setSubtitle("");
 
                 break;
 
             case R.id.nav_sync_up:
                 changeFragment(new syncUpFragment());
-                getSupportActionBar().setTitle("Syncronizar");
-                getSupportActionBar().setSubtitle("");
+                //getSupportActionBar().setTitle("Syncronizar");
+                //getSupportActionBar().setSubtitle("");
                 break;
 
             default:

@@ -1,10 +1,10 @@
 package extrema.pobreza.simi.simipobrezaextrema;
 
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -24,10 +24,7 @@ import java.util.List;
 
 import extrema.pobreza.simi.simipobrezaextrema.adapter.CommunityAdapter;
 import extrema.pobreza.simi.simipobrezaextrema.model.Community;
-
-
 public class CommunityFragment extends Fragment implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
-
     private RecyclerView communityRecicler;
     private CommunityAdapter communityAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -49,9 +46,8 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_comunity, container, false);
         initViews(view);
         setLayoutManager();
@@ -59,6 +55,7 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
         setRecycler();
         return view;
     }
+
 
     @Override
     public void onAttach(Context context) {
@@ -72,16 +69,6 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
         super.onStart();
         fbScanner.setOnClickListener(this);
         periodoGroup.setOnCheckedChangeListener(this);
-      //  chipGroup.setOnCheckedChangeListener(this);
-      //  chip.setCheckable(true);
-      //  chip1.setCheckable(true);
-      //  chip2.setCheckable(true);
-      //  chip3.setCheckable(true);
-      //  chip4.setCheckable(true);
-
-      //  chip1.setChecked(true);
-      //  chip2.setChecked(true);
-      //  chip1.setCheckedIconEnabled(false);
     }
 
     public void initViews(View v){
@@ -90,15 +77,7 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
         tvEstatus = v.findViewById(R.id.comunity_estatus);
         radioButton = v.findViewById(R.id.rbtn1);
         periodoGroup = v.findViewById(R.id.donaciones_group);
-
         radioButton.setChecked(true);
-
-      //  chipGroup = v.findViewById(R.id.comunity_chip_group);
-      //  chip = v.findViewById(R.id.chip_feb);
-      //  chip1 = v.findViewById(R.id.chip_may);
-      //  chip2 = v.findViewById(R.id.JUL_AGO);
-      //  chip3 = v.findViewById(R.id.sep);
-      //  chip4 = v.findViewById(R.id.nov);
     }
 
     public void setAdapter(){
@@ -128,6 +107,7 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
         communities.add(community2);
         communities.add(community3);
         communities.add(community4);
+
     }
 
     public void setLayoutManager(){
@@ -145,7 +125,6 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
             case R.id.comunity_fb_scanner:
                 startActivity(new Intent(getActivity(),ScannerActivity.class));
                 break;
-
         }
     }
 
@@ -170,13 +149,11 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
                 break;
 
             case R.id.rbtn4:
-
                 tvEstatus.setText("CERRADO");
                 //Toast.makeText(context,"JUL",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.rbtn5:
-
                 tvEstatus.setText("CERRADO");
                 //Toast.makeText(context,"SEP",Toast.LENGTH_SHORT).show();
                 break;
