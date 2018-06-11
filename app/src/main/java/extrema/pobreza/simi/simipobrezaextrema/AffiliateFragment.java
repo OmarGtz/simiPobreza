@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import extrema.pobreza.simi.simipobrezaextrema.adapter.BeneficiarioAdapter;
+import extrema.pobreza.simi.simipobrezaextrema.model.Beneficiario;
 
 
 /**
@@ -29,6 +30,8 @@ public class AffiliateFragment extends Fragment {
     private BeneficiarioAdapter beneficiarioAdapter;
 
     private List<String> beneficiarios;
+
+    private List<Beneficiario> beneficiarioList;
 
     public AffiliateFragment() {
         // Required empty public constructor
@@ -49,6 +52,7 @@ public class AffiliateFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setBeneficiarios();
+        setList();
         setLayoutManager();
         setAdapter();
     }
@@ -69,13 +73,42 @@ public class AffiliateFragment extends Fragment {
         beneficiarios.add("Benito juarez juarez");
     }
 
+
+    public void setList(){
+        beneficiarioList = new ArrayList<>();
+        Beneficiario beneficiario = new Beneficiario("Ma de jesus Rangel Martinez",true,"620000127008");
+        Beneficiario beneficiario1 = new Beneficiario("Gloria campos macias",true,"620000127008");
+        Beneficiario beneficiario2 = new Beneficiario("Beatriz eugenia Velazquez",true,"620000127008");
+        Beneficiario beneficiario3 = new Beneficiario("Graciela Lozan Milan",true,"620000127008");
+        Beneficiario beneficiario4 = new Beneficiario("Maria patricia davila Lara",false,"620000127008");
+        Beneficiario beneficiario5 = new Beneficiario("Anronio Gonzalez franco",true,"620000127008");
+        Beneficiario beneficiario6 = new Beneficiario("Ester Solis Martinez",true,"620000127008");
+        Beneficiario beneficiario7= new Beneficiario("Ramona Gonzales campos",false,"620000127008");
+        Beneficiario beneficiario8 = new Beneficiario("Silvia Matinez nieto",true,"620000127008");
+
+        beneficiarioList.add(beneficiario1);
+
+        beneficiarioList.add(beneficiario2);
+        beneficiarioList.add(beneficiario3);
+        beneficiarioList.add(beneficiario4);
+        beneficiarioList.add(beneficiario);
+        beneficiarioList.add(beneficiario5);
+        beneficiarioList.add(beneficiario6);
+        beneficiarioList.add(beneficiario7);
+        beneficiarioList.add(beneficiario8);
+        beneficiarioList.add(beneficiario);
+        beneficiarioList.add(beneficiario2);
+
+
+    }
+
     public void setAdapter(){
         beneficiarioAdapter = new BeneficiarioAdapter(beneficiarios, new BeneficiarioAdapter.OnclickItemListener() {
             @Override
             public void onClickItem(int Position) {
                 startActivity(new Intent(getActivity(),BeneficarioActivity.class));
             }
-        });
+        },beneficiarioList);
     }
 
     public void setRecyclerView(){

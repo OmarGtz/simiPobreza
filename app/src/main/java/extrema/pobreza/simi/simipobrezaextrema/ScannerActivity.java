@@ -1,11 +1,15 @@
 package extrema.pobreza.simi.simipobrezaextrema;
 
+import android.content.DialogInterface;
 import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -15,6 +19,8 @@ import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 import com.google.zxing.Result;
+
+import extrema.pobreza.simi.simipobrezaextrema.dialog.WriteFolioDialog;
 
 public class ScannerActivity extends AppCompatActivity implements detailScaner.OnDetailListener {
 
@@ -51,6 +57,17 @@ public class ScannerActivity extends AppCompatActivity implements detailScaner.O
         toolbar = findViewById(R.id.scaner_toolbar);
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.scaner_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+
+
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -80,6 +97,10 @@ public class ScannerActivity extends AppCompatActivity implements detailScaner.O
 
             case android.R.id.home:
                 onBackPressed();
+                break;
+
+            case R.id.scaner_meni_write:
+                showWriteFolioDialog();
                 break;
         }
 
@@ -124,6 +145,43 @@ public class ScannerActivity extends AppCompatActivity implements detailScaner.O
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+
+    }
+
+    public AlertDialog showWriteFolioDialog() {
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View v = inflater.inflate(R.layout.dialog_write_folio,null);
+        builder.setView(v);
+        builder.setCancelable(false);
+
+
+        builder.setPositiveButton("Buscar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mBottomSheet.setState(BottomSheetBehavior.STATE_EXPANDED);
+                dialog.dismiss();
+            }
+        });
+
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+
+            }
+        });
+
+        builder.create();
+        return builder.show();
+    }
+
+
+    public void showWriteDialog(){
+        WriteFolioDialog folioDialog = new WriteFolioDialog();
+
+        folioDialog.show(getFragmentManager(),"dialog");
 
     }
 

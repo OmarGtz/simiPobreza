@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
             case R.id.nav_menu_comunidad:
                 changeFragment(new CommunityFragment());
-                //getSupportActionBar().setTitle("Donaciones");
+                getSupportActionBar().setTitle("Baja California Sur");
                 break;
 
             case R.id.nav_afiliado:

@@ -25,6 +25,7 @@ import java.util.List;
 import extrema.pobreza.simi.simipobrezaextrema.adapter.CommunityAdapter;
 import extrema.pobreza.simi.simipobrezaextrema.model.Community;
 public class CommunityFragment extends Fragment implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+
     private RecyclerView communityRecicler;
     private CommunityAdapter communityAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -36,7 +37,7 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
     private TextView tvEstatus;
 
     public CommunityFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -55,7 +56,6 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
         setRecycler();
         return view;
     }
-
 
     @Override
     public void onAttach(Context context) {
@@ -90,10 +90,10 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
     }
 
     public void setListCommunities(){
-        Community community1 = new Community("LAURA NO ESTA","estado de mexico","ciudad de mexico");
-        Community community2 = new Community("FILOMENO MENDEZ MENDOZA","estado de mexico","ciudad de mexico");
-        Community community3 = new Community("ANZINA ALIBABA BABA","estado de mexico","ciudad de mexico");
-        Community community4 = new Community("ANITA LA HUERFANITA","estado de mexico","ciudad de mexico");
+        Community community1 = new Community("Ma felix Del Real Cruz","estado de mexico","ciudad de mexico");
+        Community community2 = new Community("Teresita De jesus Mendez Quintana","estado de mexico","ciudad de mexico");
+        Community community3 = new Community("Minerva Nieto Hernandez","estado de mexico","ciudad de mexico");
+        Community community4 = new Community("Socorro Lopez Ortiz","estado de mexico","ciudad de mexico");
         communities = new ArrayList<>();
         communities.add(community1);
         communities.add(community2);
@@ -107,7 +107,6 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
         communities.add(community2);
         communities.add(community3);
         communities.add(community4);
-
     }
 
     public void setLayoutManager(){
@@ -132,37 +131,46 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId){
             case R.id.rbtn1:
-
                 tvEstatus.setText("ABIERTO");
-                //Toast.makeText(context,"Ene",Toast.LENGTH_SHORT).show();
+                tvEstatus.setTextColor(getResources().getColor(R.color.greenColor));
+                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_1, 0, 0, 0);
                 break;
 
             case R.id.rbtn2:
 
                 tvEstatus.setText("CERRADO");
+                tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
+
+                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
                 //Toast.makeText(context,"MAR",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.rbtn3:
                 tvEstatus.setText("CERRADO");
+                tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
+                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
                 //Toast.makeText(context,"MAY",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.rbtn4:
                 tvEstatus.setText("CERRADO");
+                tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
+                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
                 //Toast.makeText(context,"JUL",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.rbtn5:
                 tvEstatus.setText("CERRADO");
+                tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
+                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
                 //Toast.makeText(context,"SEP",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.rbtn6:
                 tvEstatus.setText("CERRADO");
-                //Toast.makeText(context,"NOV",Toast.LENGTH_SHORT).show();
+                tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
+                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
                 break;
-
         }
     }
 }
