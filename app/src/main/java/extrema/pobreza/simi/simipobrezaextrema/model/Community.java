@@ -2,13 +2,13 @@ package extrema.pobreza.simi.simipobrezaextrema.model;
 
 public class Community {
     private String name;
-    private String state;
-    private String city;
+    private int totalBeneficiarios;
+    private int TotalDonaciones;
 
-    public Community(String name, String state, String city) {
+    public Community(String name, int totalBeneficiarios, int totalDonaciones) {
         this.name = name;
-        this.state = state;
-        this.city = city;
+        this.totalBeneficiarios = totalBeneficiarios;
+        TotalDonaciones = totalDonaciones;
     }
 
     public String getName() {
@@ -19,19 +19,19 @@ public class Community {
         this.name = name;
     }
 
-    public String getState() {
-        return state;
+    public int getTotalBeneficiarios() {
+        return totalBeneficiarios;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setTotalBeneficiarios(int totalBeneficiarios) {
+        this.totalBeneficiarios = totalBeneficiarios;
     }
 
-    public String getCity() {
-        return city;
+    public int getTotalDonaciones() {
+        return TotalDonaciones;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setTotalDonaciones(int totalDonaciones) {
+        TotalDonaciones = totalDonaciones;
     }
 }

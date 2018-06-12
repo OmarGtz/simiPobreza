@@ -35,7 +35,6 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
     private Context context;
     private RadioGroup periodoGroup;
     private TextView tvEstatus;
-
     public CommunityFragment() {
 
     }
@@ -90,10 +89,16 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
     }
 
     public void setListCommunities(){
-        Community community1 = new Community("Ma felix Del Real Cruz","estado de mexico","ciudad de mexico");
-        Community community2 = new Community("Teresita De jesus Mendez Quintana","estado de mexico","ciudad de mexico");
-        Community community3 = new Community("Minerva Nieto Hernandez","estado de mexico","ciudad de mexico");
-        Community community4 = new Community("Socorro Lopez Ortiz","estado de mexico","ciudad de mexico");
+        Community community1 = new Community("Cañada Honda",200,150);
+        Community community2 = new Community("Jesus Maria",230,200);
+        Community community3 = new Community("Refugio De providencia",250,201);
+        Community community4 = new Community("Santa Maria De Gallardo",200,180);
+        Community community5 = new Community("Ex Ejido Ojocaliente",210,199);
+        Community community6 = new Community("Jesus Maria",250,190);
+        Community community7 = new Community("Norias de Paso Hondo",260,198);
+        Community community8 = new Community("Cañada Honda",270,210);
+        Community community9 = new Community("El Che Guevara",200,160);
+
         communities = new ArrayList<>();
         communities.add(community1);
         communities.add(community2);
@@ -137,12 +142,9 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
                 break;
 
             case R.id.rbtn2:
-
                 tvEstatus.setText("CERRADO");
                 tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
-
                 tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
-                //Toast.makeText(context,"MAR",Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.rbtn3:
