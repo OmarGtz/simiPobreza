@@ -154,25 +154,6 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
                 //Toast.makeText(context,"MAY",Toast.LENGTH_SHORT).show();
                 break;
 
-            case R.id.rbtn4:
-                tvEstatus.setText("CERRADO");
-                tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
-                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
-                //Toast.makeText(context,"JUL",Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.rbtn5:
-                tvEstatus.setText("CERRADO");
-                tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
-                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
-                //Toast.makeText(context,"SEP",Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.rbtn6:
-                tvEstatus.setText("CERRADO");
-                tvEstatus.setTextColor(getResources().getColor(R.color.redColot));
-                tvEstatus.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_valid_2, 0, 0, 0);
-                break;
         }
     }
 }
