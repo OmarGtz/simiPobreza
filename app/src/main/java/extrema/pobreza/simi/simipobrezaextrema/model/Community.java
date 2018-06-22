@@ -4,11 +4,13 @@ public class Community {
     private String name;
     private int totalBeneficiarios;
     private int TotalDonaciones;
+    private int status;
 
-    public Community(String name, int totalBeneficiarios, int totalDonaciones) {
+    public Community(String name, int totalBeneficiarios, int totalDonaciones, int status) {
         this.name = name;
         this.totalBeneficiarios = totalBeneficiarios;
         TotalDonaciones = totalDonaciones;
+        this.status = status;
     }
 
     public String getName() {
@@ -33,5 +35,13 @@ public class Community {
 
     public void setTotalDonaciones(int totalDonaciones) {
         TotalDonaciones = totalDonaciones;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 }

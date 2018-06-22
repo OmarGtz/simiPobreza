@@ -20,23 +20,21 @@ public class CampaingAdapter extends RecyclerView.Adapter<CampaingAdapter.Campai
     private Context context;
     private OnCampaingListener campaingListener;
 
-    public CampaingAdapter(List<Campaing> campaings, Context context,OnCampaingListener campaingListener){
+    public CampaingAdapter(List<Campaing> campaings, Context context){
         this.campaings = campaings;
         this.context = context;
-        this.campaingListener = campaingListener;
     }
-
 
     @NonNull
     @Override
     public CampaignViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.community_item,parent,false);
+        View itemView = LayoutInflater.from(context).inflate(R.layout.donacion_item,parent,false);
         return new CampaignViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CampaignViewHolder holder, int position) {
-        holder.bind(campaings.get(position),campaingListener);
+        holder.bind(campaings.get(position));
     }
 
     @Override
@@ -48,21 +46,22 @@ public class CampaingAdapter extends RecyclerView.Adapter<CampaingAdapter.Campai
 
         private TextView tvName;
 
+
         public CampaignViewHolder(View itemView) {
             super(itemView);
             initViews(itemView);
         }
 
         public void initViews(View view){
-            tvName = view.findViewById(R.id.comunity_item_tv_name);
+            tvName = view.findViewById(R.id.donation_item_tv_name);
         }
 
-        public void bind(Campaing campaing, final OnCampaingListener campaingListener){
+        public void bind(Campaing campaing){
             tvName.setText(campaing.getName());
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    campaingListener.onclickItem(getAdapterPosition());
+                    //campaingListener.onclickItem(getAdapterPosition());
                 }
             });
         }

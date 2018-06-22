@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, CommunityFragment.OnInteractionFragemnt {
 
     private BottomNavigationView bottomNavigationView;
     private Toolbar toolbar;
@@ -96,5 +96,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 .beginTransaction()
                 .replace(R.id.main_content,f)
                 .commit();
+    }
+
+    @Override
+    public void onShowInteractionListener() {
+        changeFragment(new DonacionFragment());
     }
 }

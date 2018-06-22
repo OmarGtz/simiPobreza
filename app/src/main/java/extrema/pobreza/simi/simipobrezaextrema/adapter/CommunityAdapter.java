@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -50,6 +51,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
     public static class CommunityViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tvName;
+        private ImageView icon;
 
         public CommunityViewHolder(View itemView) {
             super(itemView);
@@ -58,6 +60,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
 
         public void initViews(View itemView){
             tvName = itemView.findViewById(R.id.comunity_item_tv_name);
+            icon = itemView.findViewById(R.id.comunity_icon_home);
 
         }
 
@@ -69,6 +72,21 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
                     communityListener.onClickItem(getAdapterPosition());
                 }
             });
+
+
+
+            switch (community.getStatus()){
+                case 1:
+                    icon.setImageResource(R.drawable.ic_round_home);
+                    break;
+                case 2:
+                    icon.setImageResource(R.drawable.ic_round_home_green);
+                    break;
+
+                case 3:
+                    icon.setImageResource(R.drawable.ic_round_home_yellow);
+                    break;
+            }
         }
     }
 

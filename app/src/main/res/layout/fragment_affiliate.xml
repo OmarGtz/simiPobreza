@@ -6,72 +6,15 @@
     tools:context=".AffiliateFragment"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <TextView
-        android:visibility="gone"
-        android:layout_marginTop="12dp"
-        android:id="@+id/beneficiario_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Baja California"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="24dp"
-        android:textSize="26sp"
-        android:fontFamily="sans-serif"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="985"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@+id/beneficiario_title"
-        android:drawableStart="@drawable/ic_beneficiario"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/beneficiario_activo"
-        android:textStyle="bold"
-        android:layout_marginStart="24dp"
-        android:textColor="#191"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="120"
-        android:gravity="center"
-        android:drawableStart="@drawable/ic_beneficiario_baja"
-        app:layout_constraintTop_toBottomOf="@+id/beneficiario_title"
-        app:layout_constraintStart_toEndOf="@id/beneficiario_activo"
-        android:id="@+id/beneficiario_baja"
-        android:textStyle="bold"
-        android:layout_marginStart="18dp"
-        android:textColor="#f20505"/>
-
-    <View
-        app:layout_constraintTop_toBottomOf="@+id/beneficiario_baja"
-        app:layout_constraintBottom_toTopOf="@id/beneficiario_recycler"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        android:id="@+id/beneficiario_line"
-        android:visibility="visible"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/colorPrimaryDark"/>
-
-    <android.support.v7.widget.RecyclerView
-        app:layout_constraintTop_toBottomOf="@+id/beneficiario_line"
-        android:id="@+id/beneficiario_recycler"
-        android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/beneficiario_item"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/beneficiario_recycler"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            tools:listitem="@layout/beneficiario_item"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
 
 </android.support.constraint.ConstraintLayout>

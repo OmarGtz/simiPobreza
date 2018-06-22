@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@android:color/white"
@@ -11,25 +9,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="12dp"
         android:src="@drawable/ic_round_home"/>
-
         <TextView
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="14dp"
             android:id="@+id/comunity_item_tv_name"
             android:layout_width="wrap_content"
             android:text="San Antonio Abad"
-
             android:layout_marginStart="12dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/comunity_icon_home"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@android:color/black"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"/>
         <TextView
             app:layout_constraintTop_toBottomOf="@+id/comunity_item_tv_name"
             app:layout_constraintEnd_toStartOf="@id/community_tv_entregadas"
@@ -39,30 +34,28 @@
             android:layout_marginStart="12dp"
             android:gravity="center"
             android:textSize="13sp"
-            android:layout_marginBottom="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="14dp"
             app:layout_constraintStart_toEndOf="@id/comunity_icon_home"
             android:layout_marginTop="4dp"
-            android:textColor="@android:color/darker_gray"
-            android:text="Despensas: 1200"/>
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#797777"
+            android:text="Entregadas: 200"/>
         <TextView
             android:layout_marginStart="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="#797777"
             app:layout_constraintStart_toEndOf="@id/community_tv_donaciones"
             android:layout_marginTop="4dp"
             android:textSize="13sp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="14dp"
             app:layout_constraintTop_toBottomOf="@+id/comunity_item_tv_name"
             android:id="@+id/community_tv_entregadas"
             android:layout_width="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Entregas:250"/>
+            android:text="Restantes:250"/>
 
          <TextView
-
             android:textColor="@color/greenColor"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
@@ -102,7 +95,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_marginEnd="12dp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_next"/>
+
+
 </android.support.constraint.ConstraintLayout>
