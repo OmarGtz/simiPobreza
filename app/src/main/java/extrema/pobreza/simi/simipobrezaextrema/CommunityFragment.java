@@ -98,8 +98,7 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
             public void onClickItem(int position) {
                 //listener.onShowInteractionListener();
                 startActivity(new Intent(getContext(),CampaingActivity.class));
-
-                            }
+                }
         });
     }
 
@@ -135,8 +134,8 @@ public class CommunityFragment extends Fragment implements View.OnClickListener,
         communityRecicler.setAdapter(communityAdapter);
         communityRecicler.setLayoutManager(layoutManager);
         communityRecicler.setNestedScrollingEnabled(false);
-        CommunityItemDecoration itemDecoration = new CommunityItemDecoration(getContext());
-        communityRecicler.addItemDecoration(itemDecoration);
+        //CommunityItemDecoration itemDecoration = new CommunityItemDecoration(getContext());
+        //communityRecicler.addItemDecoration(itemDecoration);
     }
 
     @Override

@@ -22,19 +22,17 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
     private Context context;
     private OnCommunityListener onCommunityListener;
 
-
     public CommunityAdapter(List<Community> communities, Context context, OnCommunityListener onCommunityListener){
         this.communities = communities;
         this.context = context;
         this.onCommunityListener = onCommunityListener;
     }
 
-
     @NonNull
     @Override
     public CommunityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View itemView = LayoutInflater.from(context).inflate(R.layout.community_item,parent,false);
+        View itemView = LayoutInflater.from(context).inflate(R.layout.community_item_2,parent,false);
         return new CommunityViewHolder(itemView);
     }
 
@@ -60,8 +58,7 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
 
         public void initViews(View itemView){
             tvName = itemView.findViewById(R.id.comunity_item_tv_name);
-            icon = itemView.findViewById(R.id.comunity_icon_home);
-
+            //icon = itemView.findViewById(R.id.comunity_icon_home);
         }
 
         public void bind(Community community, final OnCommunityListener communityListener){
@@ -73,18 +70,15 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
                 }
             });
 
-
-
             switch (community.getStatus()){
                 case 1:
-                    icon.setImageResource(R.drawable.ic_round_home);
+                   // icon.setImageResource(R.drawable.ic_round_home);
                     break;
                 case 2:
-                    icon.setImageResource(R.drawable.ic_round_home_green);
+                    //icon.setImageResource(R.drawable.ic_round_home_green);
                     break;
-
                 case 3:
-                    icon.setImageResource(R.drawable.ic_round_home_yellow);
+                   // icon.setImageResource(R.drawable.ic_round_home_yellow);
                     break;
             }
         }
